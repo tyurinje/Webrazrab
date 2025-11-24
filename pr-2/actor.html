@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЛЕГЕНДА • 1967</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Cormorant+Garamond:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0d0b09;
+            color: #e8e0d5;
+            font-family: 'Cormorant Garamond', serif;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(to right, #8b0000, #5a0000);
+            padding: 1.2rem 0;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .headline-wrap {
+            text-align: center;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            margin: 0;
+        }
+
+        .subhead {
+            font-size: 0.95rem;
+            letter-spacing: 0.3em;
+            margin-top: 0.5rem;
+            color: #f0e6d2;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        /* Kinopoisk button */
+        .kp-btn {
+            display: inline-block;
+            background: #ffd400;
+            color: #000 !important;
+            text-decoration: none;
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 600;
+            padding: 0.6rem 1.2rem;
+            border-radius: 3px;
+            margin-top: 0.5rem;
+            box-shadow: 0 3px 0 #b09000, 0 5px 10px rgba(0,0,0,0.3);
+            transition: all 0.15s;
+            position: relative;
+            z-index: 2;
+        }
+
+        .kp-btn:hover {
+            background: #ffcd00;
+            transform: translateY(2px);
+            box-shadow: 0 1px 0 #b09000, 0 3px 6px rgba(0,0,0,0.3);
+        }
+
+        .kp-btn:active {
+            transform: translateY(4px);
+            box-shadow: none;
+        }
+
+        .kp-btn i {
+            margin-right: 6px;
+        }
+
+        /* Rest — same as before, slightly adjusted */
+        main {
+            padding: 2.5rem 0;
+        }
+
+        section {
+            margin-bottom: 3.5rem;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #c00;
+            margin-bottom: 1.2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        h2::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 2px;
+            background: #c00;
+            margin: 0.6rem auto;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        .intro {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        .intro::first-letter {
+            font-size: 4.5rem;
+            font-family: 'Playfair Display', serif;
+            float: left;
+            margin: 0.15rem 0.5rem 0 0;
+            color: #c00;
+        }
+
+        .film-facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+
+        .fact-card {
+            background: rgba(20, 18, 15, 0.7);
+            border: 1px solid #444;
+            padding: 1.2rem;
+            text-align: center;
+        }
+
+        .fact-card.kp-card {
+            background: linear-gradient(135deg, #ffd400 0%, #ffcd00 100%);
+            color: #000;
+            border-color: #b09000;
+        }
+
+        .fact-card.kp-card h3,
+        .fact-card.kp-card p {
+            color: #000;
+        }
+
+        .fact-card i {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        .fact-card.kp-card i {
+            color: #e0a800;
+        }
+
+        .fact-card h3 {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .photo {
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #333;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+
+        .photo img, .photo svg {
+            width: 100%;
+            display: block;
+        }
+
+        .caption {
+            background: rgba(0,0,0,0.7);
+            color: #d9c8a9;
+            padding: 0.6rem;
+            font-size: 0.85rem;
+            text-align: center;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .meaning {
+            background: rgba(30, 25, 20, 0.6);
+            padding: 2rem;
+            border-left: 4px solid #c00;
+            margin: 2rem 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2.5rem 0 1.5rem;
+            border-top: 1px solid #333;
+            font-size: 0.95rem;
+            color: #999;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: 
+                url('image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><rect width="200" height="200" fill="none" stroke="%23222" stroke-width="0.5" opacity="0.03"/></svg>'),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400"><circle cx="100" cy="100" r="2" fill="%23111" opacity="0.05"/><circle cx="300" cy="250" r="3" fill="%23111" opacity="0.03"/></svg>');
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        main, header, footer {
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .headline-wrap {
+                margin-bottom: 1rem;
+            }
+            .headline { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="headline-wrap">
+            <h1 class="headline">ЛЕГЕНДА</h1>
+            <p class="subhead">ВОСТОЧНЫЙ ЛОНДОН • 1967 • НАСТОЯЩАЯ ИСТОРИЯ</p>
+        </div>
+        <a href="https://www.kinopoisk.ru/film/764579/" target="_blank" class="kp-btn">
+            <i class="fas fa-film"></i> КиноПоиск
+        </a>
+    </header>
+
+    <main class="container">
+        <section>
+            <p class="intro">
+                «Легенда» — британский криминальный биографический триллер 2015 года, основанный на реальных событиях из жизни самых известных гангстеров Великобритании — близнецов Рональда и Реджинальда Крэй. Фильм рассказывает о взлёте и падении их криминальной империи в сердце Лондона 1960-х, где роскошь ночных клубов соседствует с уличным насилием, а слава — с паранойей.
+            </p>
+        </section>
+
+        <!-- Факты о фильме -->
+        <section>
+            <h2><i class="fas fa-film"></i> О фильме</h2>
+            <div class="film-facts">
+                <div class="fact-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Год выпуска</h3>
+                    <p>2015</p>
+                </div>
+                <div class="fact-card">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Режиссёр</h3>
+                    <p>Брайан Хелгеленд</p>
+                </div>
+                <div class="fact-card">
+                    <i class="fas fa-star"></i>
+                    <h3>Главные роли</h3>
+                    <p>Том Харди</p>
+                </div>
+                <div class="fact-card kp-card">
+                    <i class="fab fa-odnoklassniki" style="color:#0066cc;"></i>
+                    <h3>КиноПоиск</h3>
+                    <p><strong>7.9</strong> ★ (238 тыс. голосов)</p>
+                    <a href="https://www.kinopoisk.ru/film/764579/" target="_blank" style="
+                        display: inline-block;
+                        margin-top: 0.5rem;
+                        background: #0066cc;
+                        color: white !important;
+                        text-decoration: none;
+                        padding: 0.3rem 0.8rem;
+                        font-size: 0.85rem;
+                        border-radius: 2px;
+                        font-family: 'IBM Plex Mono', monospace;
+                    ">Открыть</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Галерея -->
+        <section>
+            <h2><i class="fas fa-camera"></i> Архивные снимки</h2>
+            <div class="gallery">
+                <div class="photo">
+                    <svg width="100%" height="220" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+                        <rect width="400" height="300" fill="#1a1510"/>
+                        <circle cx="200" cy="120" r="40" fill="#333"/>
+                        <rect x="160" y="80" width="80" height="100" fill="#222" rx="40"/>
+                        <text x="200" y="260" text-anchor="middle" fill="#555" font-size="14" font-family="monospace">Ronnie & Reggie, 1966</text>
+                    </svg>
+                    <div class="caption">Близнецы Крэй. Фото Scotland Yard</div>
+                </div>
+                <div class="photo">
+                    <svg width="100%" height="220" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+                        <rect width="400" height="300" fill="#1c1712"/>
+                        <rect x="80" y="60" width="240" height="180" fill="#2a2520" rx="5"/>
+                        <line x1="100" y1="150" x2="300" y2="150" stroke="#444" stroke-width="2"/>
+                        <text x="200" y="260" text-anchor="middle" fill="#555" font-size="14" font-family="monospace">Blind Beggar Pub</text>
+                    </svg>
+                    <div class="caption">Паб «Blind Beggar» — место убийства 1966 г.</div>
+                </div>
+                <div class="photo">
+                    <svg width="100%" height="220" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+                        <rect width="400" height="300" fill="#1b1611"/>
+                        <circle cx="200" cy="150" r="60" fill="#25201a"/>
+                        <circle cx="200" cy="150" r="50" fill="#333"/>
+                        <text x="200" y="260" text-anchor="middle" fill="#555" font-size="14" font-family="monospace">Tom Hardy on set</text>
+                    </svg>
+                    <div class="caption">Том Харди в гриме (двойная роль)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Смысл фильма -->
+        <section>
+            <h2><i class="fas fa-lightbulb"></i> В чём смысл?</h2>
+            <div class="meaning">
+                <p>
+                    «Легенда» — не просто гангстерская сага. Это исследование двойственности: братья-близнецы как метафора расколотой личности общества. Ронни — безумие, поэзия, хаос; Реджи — харизма, амбиции, стремление к «легитимности». Вместе они — единый организм, но их союз обречён: один не может существовать без другого, но и не может с ним сосуществовать.
+                </p>
+                <p>
+                    Фильм задаёт вопросы:  
+                    🔸 Что делает человека монстром — болезнь или выбор?  
+                    🔸 Можно ли отделить преступника от человека?  
+                    🔸 Где грань между легендой и мифом, созданным СМИ?
+                </p>
+                <p>
+                    Последняя сцена — Реджи в одиночном заключении, разговаривающий с воображаемым братом — финальный аккорд: легенда живёт дольше, чем её герои. И иногда — дольше правды.
+                </p>
+            </div>
+        </section>
+
+        <!-- Исторический контекст -->
+        <section>
+            <h2><i class="fas fa-book"></i> За кадром: Правда и миф</h2>
+            <ul style="padding-left: 1.5rem; margin-top: 1rem;">
+                <li><strong>1960–1968</strong> — годы расцвета «Фирмы» Крэев: более 200 преступлений, включая убийства, рэкет, похищения.</li>
+                <li><strong>Ронни Крэй</strong> действительно страдал параноидной шизофренией и был интернирован в психиатрическую лечебницу после ареста.</li>
+                <li><strong>Реджи Крэй</strong> женился на Фрэнсис Шей в 1965 г. — свадьба обошлась в £20 000 (сегодня ~£400 000). Развод — через 6 недель.</li>
+                <li>Братья отсидели <strong>по 30 лет</strong>. Ронни умер в тюрьме в 1995 г., Реджи — через 2 месяца после освобождения (2000 г.).</li>
+                <li>Фраза «<em>We’re not criminals — we’re businessmen</em>» — реальная цитата Реджи из интервью 1967 г.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="container">
+        <p>© 1967 • THE FIRM • CLASSIFIED</p>
+        <p>«В Лондоне есть два закона: один — для тех, кто пишет правила. Другой — для тех, кто их ломает.»</p>
+        <p style="margin-top: 0.8rem; font-size: 0.85rem; color: #666;">
+            <a href="https://www.kinopoisk.ru/film/764579/" target="_blank" style="color:#ffd400; text-decoration: underline;">
+                kinopoisk.ru/film/764579
+            </a>
+        </p>
+    </footer>
+</body>
+</html>
